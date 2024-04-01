@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
+    <title>Web Developer Portfolio</title>
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #0ff;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #0ff;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            background-color: #000000db;
+            overflow: hidden;
+            padding: 20px;
+            /* border: 2px solid #0ff; */
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 0 20px #0ff;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            /* width: 99%; */
+            z-index: 999;
+        }
+
+        .navbar a {
+            display: block;
+            color: #0ff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom-color 0.3s ease-in-out;
+        }
+
+        .navbar a:hover {
+            border-bottom-color: #0ff;
+        }
+
+        .active {
+            border-bottom-color: #0ff !important;
+        }
+
+        /* Neon border */
+        .neon-border {
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px #0ff;
+            margin-bottom: 40px;
+        }
+
+        /* Introduction section */
+        .intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .intro h1 {
+            margin-bottom: 0px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 2px solid #0ff;
+            box-shadow: 0 0 20px #0ff;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Skills section */
+        .skills {
+            margin-bottom: 40px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .skills h2 {
+            margin-bottom: 20px;
+        }
+
+        .skill {
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            background-color: #333;
+            border-radius: 10px;
+            height: 20px;
+            margin-top: 5px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #0ff;
+            border-radius: 10px;
+            animation: progressAnimation 1.4s ease-out forwards;
+        }
+
+        @keyframes progressAnimation {
+            from {
+                width: 0;
+            }
+        }
+
+        /* Projects section */
+        .projects {
+            margin-bottom: 40px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* About Me section */
+        .about {
+            margin-bottom: 40px;
+            padding-top: 40px;
+            padding-bottom: 70px;
+        }
+
+        /* Contact section */
+        .contact {
+            text-align: center;
+            margin-bottom: 90px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        /* Contact form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: rgb(42, 249, 100) 3px solid;
+            box-shadow: 0 0 10px rgb(0, 255, 74);
+            border-radius: 5px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #0ff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: rgb(0, 255, 74);
+            color: rgb(254, 101, 0);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            background-color: #000000;
+            padding: 0 0;
+            color: #0ff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Layout */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .navbar a {
+                font-size: 14px;
+            }
+
+            .intro {
+                flex-direction: column;
+            }
+        }
+
+        /* 70px gap between navbar and section */
+        section {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar" id="navbar">
+        <a href="#intro" class="active">Home</a>
+        <a href="#skills" onclick="restartProgress()">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container">
+        <!-- Introduction and Profile image section -->
+        <section class="neon-border intro" id="intro">
+            <div class="intro">
+                <div class="profile-img">
+                    <img src="img/mee.jpeg" alt="Profile Picture">
+                </div>
+                <p>Jai Shree Krishna &#128157; &#128591;</p>
+                <h1>
+                    <p style="font-size: 20px;  margin-top: -20px; margin-bottom: 2px;">I AM,</p>VK Thakur
+                </h1>
+                <p>I am a web developer, passionate about building creative and user-friendly web experiences.</p>
+            </div>
+        </section>
+
+        <!-- Skills section -->
+        <section class="neon-border skills" id="skills">
+            <center>
+                <h2>Skills</h2>
+            </center>
+            <div class="skill">
+                <span class="skill-name">HTML:</span>
+                <div class="progress-bar">
+                    <div class="progress" id="htmlProgress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">CSS:</span>
+                <div class="progress-bar">
+                    <div class="progress" id="cssProgress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">JavaScript:</span>
+                <div class="progress-bar">
+                    <div class="progress" id="jsProgress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Python:</span>
+                <div class="progress-bar">
+                    <div class="progress" id="pythonProgress" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">PHP:</span>
+                <div class="progress-bar">
+                    <div class="progress" id="phpProgress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <!-- Add more skills as needed -->
+        </section>
+
+        <!-- Projects section -->
+        <section class="neon-border projects" id="projects">
+            <center>
+                <h2>Projects</h2>
+            </center>
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Description of Project 1.</p>
+                <img src="" alt="Project 1">
+                <a href="">View Project</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+
+        <!-- About Me section -->
+        <section class="neon-border about" id="about">
+            <center>
+                <h2>About Me</h2>
+            </center>
+            <p>I am a seasoned web developer with three decades of experience in creating dynamic and interactive
+                websites. Throughout my career, I have acquired expertise in various programming languages, frameworks,
+                and technologies, enabling me to deliver high-quality solutions to clients worldwide.</p>
+            <p>My passion for web development stems from my fascination with technology and my desire to create
+                impactful digital experiences. I thrive on solving complex problems and continuously strive to stay
+                updated with the latest industry trends and best practices.</p>
+        </section>
+
+        <!-- Contact section -->
+        <section class="neon-border contact" id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-form">
+                <form action="contact.php" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 VK Devz. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Add underline to active section in navbar
+        const sections = document.querySelectorAll('section');
+        const navbarLinks = document.querySelectorAll('.navbar a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navbarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Function to restart progress bar animation
+        function restartProgress() {
+            const progressBars = document.querySelectorAll('.progress');
+            progressBars.forEach(progress => {
+                progress.style.animation = 'none';
+                progress.offsetHeight; /* Trigger reflow */
+                progress.style.animation = null;
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
