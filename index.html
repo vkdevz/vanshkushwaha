@@ -9,6 +9,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu+Mono&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <title>Web Developer Portfolio</title>
     <style>
         /* General styling */
@@ -228,6 +230,37 @@
             bottom: 0;
         }
 
+        /* SOCIAL ICONS */
+        .social-icons {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 9999;
+            display: flex;
+            /* Align items in a single line */
+            flex-direction: column;
+            /* Align items vertically */
+        }
+
+        .social-icons a {
+            display: block;
+            margin-bottom: 10px;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            color:rgb(3, 244, 224);
+            background-color: #070004;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgb(250, 19, 153);
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
         /* Responsive Layout */
         @media screen and (max-width: 768px) {
             .container {
@@ -263,6 +296,13 @@
         <a href="#contact">Contact</a>
     </div>
 
+    <div class="social-icons">
+        <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/vk_codez?igsh=MTE5cnJvaXppNG80eQ==" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
     <div class="container">
         <!-- Introduction and Profile image section -->
         <section class="neon-border intro" id="intro">
